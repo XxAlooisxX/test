@@ -1222,7 +1222,7 @@ client.on('ready', function(){
             j = -1;
         }
         i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/KiNg66S`);
+        client.user.setGame(setGame[i],`استمتع`);
     }, ms);100000
 
 });
