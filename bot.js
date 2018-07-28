@@ -1194,7 +1194,7 @@ client.on('ready',  () => {
 
       client.on('message', message => {
                                 if(!message.channel.guild) return;
-                        if (message.content.startsWith('f!ping')) {
+                        if (message.content.startsWith('--ping')) {
                             if(!message.channel.guild) return;
                             var msg = `${Date.now() - message.createdTimestamp}`
                             var api = `${Math.round(client.ping)}`
@@ -1236,7 +1236,7 @@ client.user.setStatus("dnd");
 
 client.on('message', function(message) {
                   if(!message.channel.guild) return;
-    if(message.content ===  'f!color 50') {
+    if(message.content ===  '--color 50') {
         if(message.member.hasPermission('MANAGE_ROLES')) {
             setInterval(function(){})
             message.channel.send('جاري عمل الالوان |✅')
