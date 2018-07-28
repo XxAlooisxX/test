@@ -31,7 +31,7 @@ client.on('message', async msg => { // eslint-disable-line
 	let command = msg.content.toLowerCase().split(' ')[0];
 	command = command.slice(PREFIX.length)
 
-	if (command === 'play') {
+	if (command === '--play') {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
@@ -84,7 +84,7 @@ Please provide a value to select one of the search results ranging from 1-10.
 			}
 			return handleVideo(video, msg, voiceChannel);
 		}
-	} else if (command === 'skip') {
+	} else if (command === '--skip') {
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing that I could skip for you.');
 		serverQueue.connection.dispatcher.end('Skip command has been used!');
@@ -95,7 +95,7 @@ Please provide a value to select one of the search results ranging from 1-10.
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end('Stop command has been used!');
 		return undefined;
-	} else if (command === 'volume') {
+	} else if (command === '--volume') {
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		if (!args[1]) return msg.channel.send(`The current volume is: **${serverQueue.volume}**`);
@@ -114,14 +114,14 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 
 **Now playing:** ${serverQueue.songs[0].title}
 		`);
-	} else if (command === 'pause') {
+	} else if (command === '--pause') {
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
 			return msg.channel.send('⏸ Paused the music for you!');
 		}
 		return msg.channel.send('There is nothing playing.');
-	} else if (command === 'resume') {
+	} else if (command === '--resume') {
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
@@ -194,5 +194,3 @@ function play(guild, song) {
 
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
-
-client.login(TOKEN);
