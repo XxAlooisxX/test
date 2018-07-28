@@ -1211,7 +1211,7 @@ client.on('ready',  () => {
 client.on('ready', function(){
     client.user.setStatus("dnd");
     var ms = 100000 ;
-    var setGame = [`--help ${client.guilds.size} `];
+    var setGame = [`--help `,`وحش`,`يا بطل انشر السيرفر`,`استمتع تراني احبك`];
     var i = -1;
     var j = 0;
     setInterval(function (){
