@@ -775,9 +775,35 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 }
 });
 
-client.on('message', message => {
+const bot = new Discord.Client({disableEveryone: true});
+const Canvas = require('canvas') // بكج
+const fs = module.require("fs"); //بكج
+const r1 = require('snekfetch'); //بكج
  
-if (message.content.startsWith("--profile")) { // الامر
+ 
+//var يعني تختصر للحاجه زي منا عامل كدة
+ 
+var copy = "Issun#4555"
+ 
+ 
+var mo = "الفلوس"
+var po = "النقاط"
+var lev = "الفل"
+ 
+ 
+bot.on("ready", async () => { // كل حاجه هتتفح لما البوت يشتغل
+ 
+    console.log(`I'm Online \n By ${copy}`) // الي هيظهر في الكونسل
+    console.log(`Logged in as ${bot.user.tag}!`); // نفس الي فوق
+ 
+   
+}); // نهايه الكود
+ 
+ 
+ 
+bot.on('message', message => {
+ 
+if (message.content.startsWith("$profile")) { // الامر
  let canvas = new Canvas(300, 300) //حجم الصوره الي هتظهر
  let ctx = canvas.getContext('2d')
     let Image = Canvas.Image
