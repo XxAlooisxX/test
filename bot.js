@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 client.on('ready', () => {
-	bot.user.setStatus("online")
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
@@ -737,7 +736,7 @@ function timeCon(time) {
 }
 
 client.on('message', message => {
-    var prefix = "--"
+    var prefix = "f!"
     let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
 
@@ -771,6 +770,9 @@ message.channel.sendFile(canvas.toBuffer());
 
 client.on("message", (message) => {
 if (message.content.startsWith("--ct")) {
+            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
+        let args = message.content.split(" ").slice(1);
+    message.guild.createChannel(args.join(' '), 'text');
 message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 
 }
@@ -789,7 +791,7 @@ if (message.content.startsWith("--cv")) {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith('--delet')) {
+    if (message.content.startsWith('f!delet')) {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
@@ -831,7 +833,6 @@ client.on("message", (message) => {
   message.author.sendEmbed(embed);
    }
 });
-
 
 var prefix = "--";
 
@@ -1016,7 +1017,7 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 
 client.on('message', message => {
 
-       if(message.content === prefix + "--mutechannel") {
+       if(message.content === prefix + "f!mutechannel") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
@@ -1290,6 +1291,33 @@ client.on('message', message=>{
     }
 });
 
+
+client.on('message', function(message) {
+                  if(!message.channel.guild) return;
+    if(message.content ===  '--color 140') {
+        if(message.member.hasPermission('MANAGE_ROLES')) {
+            setInterval(function(){})
+            message.channel.send('جاري عمل الالوان |✅')
+        }else{
+            message.channel.send('ما معاك البرمشن المطلوب  |❌')
+            }
+    }
+});
+
+client.on('message', message=>{
+    if (message.content ===  '--color 140'){
+              if(!message.channel.guild) return;
+            if (message.member.hasPermission('MANAGE_ROLES')){
+                setInterval(function(){})
+                  let count = 0;
+                  let ecount = 0;
+        for(let x = 1; x < 141; x++){
+            message.guild.createRole({name:x,
+            color: 'RANDOM'})
+            }
+            }
+    }
+});
 
 var x1 = "--color 1"
 var x2 = "--color 2"
