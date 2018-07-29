@@ -769,42 +769,6 @@ message.channel.sendFile(canvas.toBuffer());
 });
 
 client.on("message", (message) => {
-if (message.content.startsWith("هلا")) {
-message.channel.sendMessage('هلا بيك')
-
-}
-});
-
-client.on("message", (message) => {
-if (message.content.startsWith("باك")) {
-message.channel.sendMessage('اخيراً')
-
-}
-});
-
-client.on("message", (message) => {
-if (message.content.startsWith("بسبب")) {
-message.channel.sendMessage('لا ما نريد مشاكل')
-
-}
-});
-
-client.on("message", (message) => {
-if (message.content.startsWith("باي")) {
-message.channel.sendMessage('الله معك')
-
-}
-});
-
-client.on("message", (message) => {
-if (message.content.startsWith("مع السلامة")) {
-message.channel.sendMessage('الله وياك')
-
-}
-});
-
-
-client.on("message", (message) => {
 if (message.content.startsWith("--ct")) {
 message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 
