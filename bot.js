@@ -736,7 +736,7 @@ function timeCon(time) {
 }
 
 client.on('message', message => {
-    var prefix = "f!"
+    var prefix = "--"
     let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
 
@@ -769,7 +769,7 @@ message.channel.sendFile(canvas.toBuffer());
 });
 
 client.on("message", (message) => {
-if (message.content.startsWith("--ct")) {
+if (message.content.startsWith("هل تم انشاء روم صوتي")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'text');
@@ -778,6 +778,12 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 }
 });
 
+client.on("message", (message) => {
+if (message.content.startsWith("--ct")) {
+message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
+
+}
+});
 
 client.on("message", (message) => {
 if (message.content.startsWith("--cv")) {
@@ -791,7 +797,7 @@ if (message.content.startsWith("--cv")) {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith('f!delet')) {
+    if (message.content.startsWith('--delet')) {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
@@ -833,6 +839,7 @@ client.on("message", (message) => {
   message.author.sendEmbed(embed);
    }
 });
+
 
 var prefix = "--";
 
@@ -1017,7 +1024,7 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 
 client.on('message', message => {
 
-       if(message.content === prefix + "f!mutechannel") {
+       if(message.content === prefix + "--mutechannel") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
