@@ -683,7 +683,7 @@ message.channel.sendEmbed(cat);
       if(message.content === prefix + "image"){ 
           const embed = new Discord.RichEmbed()
   
-      .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
+      .setTitle(`This is  ** ${message.guild.name} ** !`)
   .setAuthor(message.author.username, message.guild.iconrURL)
     .setColor(0x164fe3)
     .setImage(message.guild.iconURL)
