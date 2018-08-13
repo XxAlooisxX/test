@@ -263,6 +263,42 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === 'القوانين') {
+    msg.reply('--help اكتب');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'من صاحب السيرفر') {
+    msg.reply('صاحب السيرفر Arrio');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ابي رتبة') {
+    msg.reply('تفاعل و تحصل رتبة مجانا');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ابي ترقية') {
+    msg.reply('لا تخاف بتحصل ترقية');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'بطلع') {
+    msg.reply('لا تخاف اقعد ويانا ترا وناسا');
+  }
+});
+
   var prefix = "--";
 var rebel = ["https://f.top4top.net/p_682it2tg6.png","https://e.top4top.net/p_682a1cus5.png","https://d.top4top.net/p_682pycol4.png","https://c.top4top.net/p_682vqehy3.png","https://b.top4top.net/p_682mlf9d2.png","https://a.top4top.net/p_6827dule1.png","https://b.top4top.net/p_682g1meb10.png","https://a.top4top.net/p_682jgp4v9.png","https://f.top4top.net/p_682d4joq8.png","https://e.top4top.net/p_6828o0e47.png","https://d.top4top.net/p_6824x7sy6.png","https://c.top4top.net/p_682gzo2l5.png","https://b.top4top.net/p_68295qg04.png","https://a.top4top.net/p_682zrz6h3.png","https://f.top4top.net/p_6828vkzc2.png","https://e.top4top.net/p_682i8tb11.png"]
     client.on('message', message => {
