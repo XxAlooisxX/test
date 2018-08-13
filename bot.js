@@ -777,7 +777,7 @@ function timeCon(time) {
 }
 
 client.on('message', message => {
-    var prefix = "f!"
+    var prefix = "--"
     let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
 
@@ -832,7 +832,7 @@ if (message.content.startsWith("--cv")) {
 
 
 client.on("message", (message) => {
-    if (message.content.startsWith('f!delet')) {
+    if (message.content.startsWith('--delet')) {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
 
         let args = message.content.split(' ').slice(1);
@@ -890,7 +890,6 @@ client.on('message', message => {
 
 if (command == "embed") {
     let say = new Discord.RichEmbed()
-  .setThumbnail(message.author.avatarURL)  
   .setAuthor(message.author.username)
     .setDescription(args.join("  "))
     .setColor(0x00AE86)
