@@ -18,7 +18,7 @@ client.on("message", message => {
 ***__وصف عن البوت__***
 
 **
-𝒜ℛℛℐ𝒪_#4804 مصمم البوت
+Arrio_#4804 مصمم البوت
 **
 
 **
@@ -890,7 +890,6 @@ client.on('message', message => {
 
 if (command == "embed") {
     let say = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
     .setDescription(args.join("  "))
     .setColor(0x00AE86)
     message.channel.sendEmbed(say);
@@ -1057,7 +1056,7 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 
 client.on('message', message => {
 
-       if(message.content === prefix + "f!mutechannel") {
+       if(message.content === prefix + "--mutechannel") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
@@ -1191,7 +1190,7 @@ client.on("message", message => {
   
 client.on('message', message => {
 
-if (message.content.startsWith("f!add.r")) {
+if (message.content.startsWith("--add.r")) {
              if(!message.channel.guild) return message.reply('**Commands in the server**');
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply('⚠ **You do not have permissions**');
         let args = message.content.split(" ").slice(1);
