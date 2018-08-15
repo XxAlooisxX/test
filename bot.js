@@ -890,7 +890,7 @@ client.on('message', message => {
 
 if (command == "embed") {
     let say = new Discord.RichEmbed()
-    .setAuthor(message.author.Arrio Bot)
+    .setAuthor(message)
     .setDescription(args.join("  "))
     .setColor(0x00AE86)
     message.channel.sendEmbed(say);
