@@ -548,25 +548,17 @@ var prefix = "--";
     if (message.guild) {
    let embed = new Discord.RichEmbed()
     let args = message.content.split(' ').slice(1).join(' ');
-if(cmd === `${prefix}broadcast`){
-      if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You dont have permission to do that!")
-let args = message.content.split(" ").slice(1);
-var argresult = args.join(' '); 
-    message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
-      let bcicon = message.guild.iconURL;
-      let bcEmbed = new Discord.RichEmbed()
-      .setDescription("New Broadcast", ↷)
-      .addField("Server", message.guild.name)
-      .setColor("RANDOM")
-      .setThumbnail(bcicon)
-      .addField("Sender:", `${message.author.username}#${message.author.discriminator}`)
-      .addField("To:", `${m}`)
-      .addField("Message:", argresult);
-   m.send(bcEmbed);
-   });
-   message.channel.send(`number of people who received the message: \`${message.guild.members.filter(m => m.presence.status !== 'online').size}\``);
-   message.delete(); 
-};
+ if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
+};     
+});
     
 client.on('message', message => {
      var prefix = "--"
