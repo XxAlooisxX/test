@@ -17,10 +17,7 @@ client.on("message", message => {
 
 ***__وصف عن البوت__***
 
-**
 Arrio_#4804 مصمم البوت
-**
-
 **
 ....
 متعدد الميزات و الاوامر فيه اوامر جميله يحتوي هذا البوت على
@@ -34,10 +31,7 @@ Arrio_#4804 مصمم البوت
 بوت عربي وسيتم اضافه اللغه الاجنبيه قريبا
 يحتوي على خاصيه الميوزك بجوده عاليه
 **
-**
-"--" لبرفكس حق البوت
-**
-                           
+
         ***__General orders__***
 **
 『id / معلومات عن حسابك』
@@ -77,6 +71,8 @@ Arrio_#4804 مصمم البوت
         ***__Special orders __***
 **
 『color / لي تغير لونك』
+『color 140 / لانشاء 140 لون』
+『color 100 / لانشاء 100 لون』
 **
 
         ***__Games orders__***
@@ -250,54 +246,13 @@ const Za7f = [
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL) 
- .addField('Arrio Bot' ,
+ .addField('GΔЛGƁΘƬ' ,
   `${Za7f[Math.floor(Math.random() * Za7f.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[38ab] Send By: ' + message.author.username)
     }
 });
 
-client.on('message', msg => {
-  if (msg.content === 'هلا') {
-    msg.reply('هلا بيك');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'القوانين') {
-    msg.reply('--help اكتب');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'من صاحب السيرفر') {
-    msg.reply('صاحب السيرفر Arrio');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'ابي رتبة') {
-    msg.reply('تفاعل و تحصل رتبة مجانا');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'ابي ترقية') {
-    msg.reply('لا تخاف بتحصل ترقية');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('Pong!');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === 'بطلع') {
-    msg.reply('لا تخاف اقعد ويانا ترا وناسا');
-  }
-});
 
   var prefix = "--";
 var rebel = ["https://f.top4top.net/p_682it2tg6.png","https://e.top4top.net/p_682a1cus5.png","https://d.top4top.net/p_682pycol4.png","https://c.top4top.net/p_682vqehy3.png","https://b.top4top.net/p_682mlf9d2.png","https://a.top4top.net/p_6827dule1.png","https://b.top4top.net/p_682g1meb10.png","https://a.top4top.net/p_682jgp4v9.png","https://f.top4top.net/p_682d4joq8.png","https://e.top4top.net/p_6828o0e47.png","https://d.top4top.net/p_6824x7sy6.png","https://c.top4top.net/p_682gzo2l5.png","https://b.top4top.net/p_68295qg04.png","https://a.top4top.net/p_682zrz6h3.png","https://f.top4top.net/p_6828vkzc2.png","https://e.top4top.net/p_682i8tb11.png"]
@@ -396,7 +351,7 @@ const Love = [  "**احبك / عدد قطرات المـــطر والشجر و
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL) 
- .addField('Arrio Bot' ,
+ .addField('GΔЛGƁΘƬ' ,
   `${Love[Math.floor(Math.random() * Love.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
@@ -569,7 +524,6 @@ return;
     }
 });
 
-
     
 client.on('message', message => {
      var prefix = "--"
@@ -725,7 +679,7 @@ message.channel.sendEmbed(cat);
       if(message.content === prefix + "image"){ 
           const embed = new Discord.RichEmbed()
   
-      .setTitle(`This is  ** ${message.guild.name} ** !`)
+      .setTitle(`This is  ** ${message.guild.name} **  Photo !`)
   .setAuthor(message.author.username, message.guild.iconrURL)
     .setColor(0x164fe3)
     .setImage(message.guild.iconURL)
@@ -737,7 +691,7 @@ message.channel.sendEmbed(cat);
   });
 
 client.on('message', message => {
-    if (message.content.startsWith("--avatar")) {
+    if (message.content.startsWith("f!avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -755,7 +709,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("--stats")) {
+    if (message.content.startsWith("f!stats")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .addField('Uptime', timeCon(process.uptime()), true)
@@ -891,7 +845,8 @@ client.on('message', message => {
 
 if (command == "embed") {
     let say = new Discord.RichEmbed()
-      .setAuthor(message.author.username)
+  .setThumbnail(message.author.avatarURL)  
+  .setAuthor(message.author.username)
     .setDescription(args.join("  "))
     .setColor(0x00AE86)
     message.channel.sendEmbed(say);
@@ -1058,7 +1013,7 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 
 client.on('message', message => {
 
-       if(message.content === prefix + "--mutechannel") {
+       if(message.content === prefix + "f!mutechannel") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
@@ -1070,7 +1025,7 @@ client.on('message', message => {
               });
                 }
 //viper
-    if(message.content === prefix + "--unmutechannel") {
+    if(message.content === prefix + "f!unmutechannel") {
                         if(!message.channel.guild) return message.reply('** This command only for servers**');
 
    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
@@ -1192,7 +1147,7 @@ client.on("message", message => {
   
 client.on('message', message => {
 
-if (message.content.startsWith("--add.r")) {
+if (message.content.startsWith("f!add.r")) {
              if(!message.channel.guild) return message.reply('**Commands in the server**');
         if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply('⚠ **You do not have permissions**');
         let args = message.content.split(" ").slice(1);
@@ -1227,7 +1182,7 @@ client.on("guildCreate", guild => {
 });
 
 client.on('ready',  () => {
-  console.log('تم تشغيل :Arrio Bot ');
+  console.log('تم تشغيل :FireBot  ');
   console.log(`Logged in as * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] Users! [ " ${client.users.size} " ]`);
   console.log(`Logged in as * [ " ${client.user.username} " ] channels! [ " ${client.channels.size} " ]`);
@@ -1252,7 +1207,7 @@ client.on('ready',  () => {
 client.on('ready', function(){
     client.user.setStatus("dnd");
     var ms = 100000 ;
-    var setGame = [`--help `,`--invite`,`يا بطل انشر السيرفر`,`استمتع تراني احبك`];
+    var setGame = [`احبك `,`--invite`,``,``,``,``];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -1263,7 +1218,7 @@ client.on('ready', function(){
             j = -1;
         }
         i = i+j;
-        client.user.setGame(setGame[i],`https://www.twitch.tv/KiNg66S`);
+        client.user.setGame(setGame[i],`http://www.twitch.tv/KiNg66S`);
     }, ms);100000
 
 });
@@ -1301,8 +1256,6 @@ client.on('message', message=>{
             }
     }
 });
-
-
 
 
 client.on('message', function(message) {
